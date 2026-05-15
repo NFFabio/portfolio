@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="de" data-lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fabio Neundlinger</title>
+  <meta name="description" content="Fabio Neundlinger — builds tools that make his life easier.">
+  <link rel="stylesheet" href="style.css">
+  <!-- Fonts: self-host these WOFF2 files in assets/fonts/ for production -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Noise grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Mouse-following ambient glow -->
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <!-- Background constellation SVG (connects sections) -->
+  <svg class="bg-constellation" aria-hidden="true" preserveAspectRatio="none">
+    <path class="constellation-line cl-1" d="M 10,100 Q 200,300 150,500 T 300,900 Q 400,1200 200,1600 T 350,2200 Q 250,2600 400,3000" />
+    <path class="constellation-line cl-2" d="M 90,0 Q 85,200 70,450 T 60,800 Q 50,1100 80,1500 T 55,2000 Q 75,2400 45,2800" />
+    <circle class="constellation-dot cd-1" cx="150" cy="500" r="2" />
+    <circle class="constellation-dot cd-2" cx="300" cy="900" r="2" />
+    <circle class="constellation-dot cd-3" cx="200" cy="1600" r="2" />
+    <circle class="constellation-dot cd-4" cx="350" cy="2200" r="2" />
+    <circle class="constellation-dot cd-5" cx="60" cy="800" r="1.5" />
+    <circle class="constellation-dot cd-6" cx="80" cy="1500" r="1.5" />
+    <circle class="constellation-dot cd-7" cx="55" cy="2000" r="1.5" />
+  </svg>
+
+  <!-- Language toggle -->
+  <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+    <span class="lang-opt" data-l="de">DE</span>
+    <span class="lang-sep">/</span>
+    <span class="lang-opt active" data-l="en">EN</span>
+  </button>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-constellation" aria-hidden="true">
+      <svg viewBox="0 0 400 400" class="hero-svg">
+        <!-- Hourglass / Kronos symbol -->
+        <path class="hero-line hl-1" d="M 120,80 L 280,80 L 200,200 L 280,320 L 120,320 L 200,200 Z" />
+        <!-- Outer circle -->
+        <circle class="hero-line hl-2" cx="200" cy="200" r="160" />
+        <!-- Accent dots at vertices -->
+        <circle class="hero-dot" cx="120" cy="80" r="3" />
+        <circle class="hero-dot" cx="280" cy="80" r="3" />
+        <circle class="hero-dot" cx="200" cy="200" r="3" />
+        <circle class="hero-dot" cx="280" cy="320" r="3" />
+        <circle class="hero-dot" cx="120" cy="320" r="3" />
+        <!-- Decorative rays -->
+        <line class="hero-line hl-3" x1="200" y1="40" x2="200" y2="10" />
+        <line class="hero-line hl-3" x1="360" y1="200" x2="390" y2="200" />
+        <line class="hero-line hl-3" x1="200" y1="360" x2="200" y2="390" />
+        <line class="hero-line hl-3" x1="40" y1="200" x2="10" y2="200" />
+      </svg>
+    </div>
+    <div class="hero-content">
+      <div class="hero-portrait-wrapper word-reveal">
+        <div class="hero-portrait">
+          <img class="portrait-halftone" src="assets/portrait-halftone.png" alt="" aria-hidden="true" width="588" height="979" loading="eager">
+          <img class="portrait-main" src="assets/portrait-hero.png" alt="Fabio Neundlinger" width="588" height="979" loading="eager">
+          <div class="portrait-overlay" aria-hidden="true"></div>
+        </div>
+      </div>
+      <h1 class="hero-name" aria-label="Fabio Neundlinger">
+        <span class="word-reveal">Fabio</span>
+        <span class="word-reveal">Neundlinger</span>
+      </h1>
+      <p class="hero-tagline">
+        <span class="word-reveal" data-i18n="hero.tagline">builds tools that make his life easier.</span>
+      </p>
+    </div>
+    <div class="scroll-hint" aria-hidden="true">
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ ABOUT ═══════════════ -->
+  <section class="section about" id="about">
+    <div class="section-label reveal-up">
+      <span class="label-index">01</span>
+      <span class="label-line"></span>
+      <span class="label-text" data-i18n="about.label">About</span>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-main">
+        <p class="about-lead reveal-up" data-i18n="about.lead">
+          I'm a student at HTL Leonding studying IT &amp; Media Technology.
+        </p>
+        <p class="about-body reveal-up" data-i18n="about.body1">
+          At school I learn Java, databases and networking. On the side I build an AI system that runs my school life — from Moodle sync to voice assistant to face recognition.
+        </p>
+        <p class="about-body reveal-up" data-i18n="about.body2">
+          I've built the same school planner three times — as a web app, a native SwiftUI app, a CLI tool. Each time with better architecture, each time closer to what I actually need.
+        </p>
+        <p class="about-body reveal-up" data-i18n="about.body3">
+          When I'm not coding, I run, hit the gym, cycle or swim. Or I solve LeetCode puzzles — for fun.
+        </p>
+      </div>
+
+      <div class="about-aside reveal-up">
+        <div class="tech-stack">
+          <h3 class="aside-title" data-i18n="about.stack">Stack</h3>
+          <div class="stack-tags">
+            <span class="tag">TypeScript</span>
+            <span class="tag">Swift</span>
+            <span class="tag">Python</span>
+            <span class="tag">React</span>
+            <span class="tag">SwiftUI</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Three.js</span>
+            <span class="tag">OpenCV</span>
+          </div>
+        </div>
+        <div class="tech-stack">
+          <h3 class="aside-title" data-i18n="about.tools">Tools</h3>
+          <div class="stack-tags">
+            <span class="tag">Ollama</span>
+            <span class="tag">Whisper</span>
+            <span class="tag">Gemini</span>
+            <span class="tag">Git</span>
+            <span class="tag">Xcode</span>
+            <span class="tag">Obsidian</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ WHAT I BUILD ═══════════════ -->
+  <section class="section builds" id="builds">
+    <div class="section-label reveal-up">
+      <span class="label-index">02</span>
+      <span class="label-line"></span>
+      <span class="label-text" data-i18n="builds.label">What I Build</span>
+    </div>
+
+    <p class="builds-intro reveal-up" data-i18n="builds.intro">
+      I like building things that solve a real problem. Local AI isn't a gimmick — it's a tool.
+    </p>
+
+    <div class="builds-grid">
+      <!-- AI Integration -->
+      <div class="build-card reveal-up">
+        <svg class="build-icon" viewBox="0 0 64 64" aria-hidden="true">
+          <!-- Hourglass: Kronos -->
+          <path class="icon-line" d="M 16,8 L 48,8 L 32,32 L 48,56 L 16,56 L 32,32 Z" />
+          <circle class="icon-dot" cx="16" cy="8" r="2" />
+          <circle class="icon-dot" cx="48" cy="8" r="2" />
+          <circle class="icon-dot" cx="48" cy="56" r="2" />
+          <circle class="icon-dot" cx="16" cy="56" r="2" />
+        </svg>
+        <h3 class="build-title">AI Integration</h3>
+        <p class="build-desc" data-i18n="builds.ai">
+          Local LLMs as real tools — voice assistant, smart scheduling, face recognition. Everything runs on my machine.
+        </p>
+        <div class="build-projects">
+          <span class="project-name">Kronos</span>
+          <span class="badge">AI-powered</span>
+        </div>
+      </div>
+
+      <!-- Native Apps -->
+      <div class="build-card reveal-up">
+        <svg class="build-icon" viewBox="0 0 64 64" aria-hidden="true">
+          <!-- Lyre: Harmonia -->
+          <path class="icon-line" d="M 20,56 L 20,24 Q 20,8 32,8 Q 44,8 44,24 L 44,56" />
+          <line class="icon-line" x1="26" y1="20" x2="26" y2="52" />
+          <line class="icon-line" x1="32" y1="16" x2="32" y2="52" />
+          <line class="icon-line" x1="38" y1="20" x2="38" y2="52" />
+          <circle class="icon-dot" cx="32" cy="8" r="2" />
+        </svg>
+        <h3 class="build-title">Native Apps</h3>
+        <p class="build-desc" data-i18n="builds.native">
+          SwiftUI apps in the Apple ecosystem. From AI-curated news feeds to school planning tools.
+        </p>
+        <div class="build-projects">
+          <span class="project-name">Harmonia</span>
+          <span class="project-name">Ikaro</span>
+          <span class="badge">AI-powered</span>
+        </div>
+      </div>
+
+      <!-- Web -->
+      <div class="build-card reveal-up">
+        <svg class="build-icon" viewBox="0 0 64 64" aria-hidden="true">
+          <!-- Globe / Web -->
+          <circle class="icon-line" cx="32" cy="32" r="24" />
+          <ellipse class="icon-line" cx="32" cy="32" rx="12" ry="24" />
+          <line class="icon-line" x1="8" y1="32" x2="56" y2="32" />
+          <circle class="icon-dot" cx="32" cy="8" r="2" />
+          <circle class="icon-dot" cx="32" cy="56" r="2" />
+        </svg>
+        <h3 class="build-title">Web</h3>
+        <p class="build-desc" data-i18n="builds.web">
+          React, vanilla HTML/CSS/JS, Three.js. From AI-driven 3D simulations to framework-free client sites.
+        </p>
+        <div class="build-projects">
+          <span class="project-name">Dodo World</span>
+          <span class="badge">AI-powered</span>
+        </div>
+      </div>
+
+      <!-- Computer Vision -->
+      <div class="build-card reveal-up">
+        <svg class="build-icon" viewBox="0 0 64 64" aria-hidden="true">
+          <!-- Eye: Vision -->
+          <path class="icon-line" d="M 4,32 Q 32,8 60,32 Q 32,56 4,32 Z" />
+          <circle class="icon-line" cx="32" cy="32" r="10" />
+          <circle class="icon-dot" cx="32" cy="32" r="4" />
+        </svg>
+        <h3 class="build-title">Computer Vision</h3>
+        <p class="build-desc" data-i18n="builds.cv">
+          OpenCV, Haar Cascades, face recognition. Learning computer vision step by step, from scratch.
+        </p>
+        <div class="build-projects">
+          <span class="project-name">Kronos Eyes</span>
+          <span class="badge">AI-powered</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CONTACT ═══════════════ -->
+  <section class="section contact" id="contact">
+    <div class="section-label reveal-up">
+      <span class="label-index">03</span>
+      <span class="label-line"></span>
+      <span class="label-text" data-i18n="contact.label">Contact</span>
+    </div>
+
+    <div class="contact-links reveal-up">
+      <a href="https://github.com/NFFabio" target="_blank" rel="noopener" class="contact-link magnetic">
+        <span class="link-text">GitHub</span>
+        <span class="link-arrow">&rarr;</span>
+      </a>
+      <a href="https://leetcode.com/u/NFFabio/" target="_blank" rel="noopener" class="contact-link magnetic">
+        <span class="link-text">LeetCode</span>
+        <span class="link-arrow">&rarr;</span>
+      </a>
+      <button class="contact-link magnetic" id="emailReveal">
+        <span class="link-text" data-i18n="contact.email">Email on request</span>
+        <span class="link-arrow">&rarr;</span>
+      </button>
+    </div>
+
+    <!-- Email reveal overlay -->
+    <div class="email-modal" id="emailModal" aria-hidden="true">
+      <div class="email-modal-content reveal-up">
+        <p class="email-modal-text" data-i18n="contact.emailText">Click below to copy my email address.</p>
+        <button class="email-copy-btn" id="emailCopy">
+          <span class="email-address">Neundlinger.Fabio@gmail.com</span>
+          <span class="email-copied" data-i18n="contact.copied">Copied!</span>
+        </button>
+        <button class="email-modal-close" id="emailClose" aria-label="Close">&times;</button>
+      </div>
+    </div>
+
+    <!-- Greek word as background decoration -->
+    <div class="greek-deco reveal-up" aria-hidden="true">&Kappa;&rho;&omicron;&nu;&omicron;&sigmaf;</div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <span class="footer-line"></span>
+    <p class="footer-text">&copy; 2026 Fabio Neundlinger</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
