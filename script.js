@@ -6,7 +6,7 @@
 // ── i18n Texts ──
 const texts = {
   de: {
-    'hero.tagline': 'baut Tools die ihm das Leben erleichtern.',
+    'hero.tagline': 'baut Tools die mir das Leben erleichtern.',
     'about.label': 'Über mich',
     'about.lead': 'Ich bin Schüler an der HTL Leonding im Zweig IT & Medientechnik.',
     'about.body1': 'In der Schule lerne ich Java, Datenbanken und Netzwerke. Daneben baue ich ein AI-System das meinen Schulalltag steuert — von Moodle-Sync über Sprachassistent bis Gesichtserkennung.',
@@ -26,7 +26,7 @@ const texts = {
     'contact.copied': 'Kopiert!',
   },
   en: {
-    'hero.tagline': 'builds tools that make his life easier.',
+    'hero.tagline': 'builds tools that make my life easier.',
     'about.label': 'About',
     'about.lead': "I'm a student at HTL Leonding studying IT & Media Technology.",
     'about.body1': 'At school I learn Java, databases and networking. On the side I build an AI system that runs my school life — from Moodle sync to voice assistant to face recognition.',
